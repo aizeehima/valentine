@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Congratulations!</title>
+  <style>
+    body {
+      background: #fff0f6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      overflow: hidden;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      color: #d6336c;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #b82a5a;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      display: inline-block;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: pop 0.6s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    ul {
+      text-align: left;
+      display: inline-block;
+      margin-top: 10px;
+      color: #d6336c;
+      font-size: 18px;
+    }
+
+    .stamp {
+      margin-top: 25px;
+      font-size: 28px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: #ff4d6d;
+      top: -10px;
+      animation: fall 3s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 CONGRATULATIONS! 🎉</h1>
+  <h2>You’ve officially won a girlfriend.</h2>
+
+  <div class="card">
+    <p>Included in your prize package:</p>
+    <ul>
+      <li>• Unlimited affection</li>
+      <li>• Occasional chaos</li>
+      <li>• Free emotional support</li>
+      <li>• Zero chance of returning her</li>
+    </ul>
+
+    <div class="stamp">APPROVED 💋</div>
+  </div>
+
+  <script>
+    // Confetti generator
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = ["#ff4d6d", "#ff99ac", "#ffccd5"][Math.floor(Math.random()*3)];
+      confetti.style.animationDuration = (2 + Math.random() * 2) + "s";
+      document.body.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 4000);
+    }
+    setInterval(createConfetti, 150);
+  </script>
+
+</body>
+</html>
